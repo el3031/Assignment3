@@ -6,14 +6,6 @@ public class SnapToGrid : MonoBehaviour
 {
     private bool shouldSnap;
     [SerializeField] private Transform grid;
-    private Vector3 targetPos;
-
-    
-    // Start is called before the first frame update
-    void Start()
-    {
-        transform.parent = grid;
-    }
 
     // Update is called once per frame
     void Update()
@@ -21,11 +13,14 @@ public class SnapToGrid : MonoBehaviour
         if (shouldSnap)
         {
             Vector3 rawPos = transform.localPosition;
-            Debug.Log(transform.localPosition);
             Vector3 newPos = new Vector3(Mathf.Round(rawPos.x), Mathf.Round(rawPos.y), Mathf.Round(rawPos.z));
             transform.localPosition = newPos;
 
-            Debug.Log("snapping");
+            Vector3 snapped = transform.localRotation.eulerAngles;
+            snapped.x = Mathf.Round(snapped.x / 90) * 90;
+            snapped.y = Mathf.Round(snapped.y / 90) * 90;
+            snapped.z = Mathf.Round(snapped.z / 90) * 90;
+            transform.localRotation = Quaternion.Euler(snapped);
         }   
     }
 
@@ -34,7 +29,6 @@ public class SnapToGrid : MonoBehaviour
         if (other.CompareTag("Grid"))
         {
             shouldSnap = true;
-            Debug.Log("in contact with grid");
         }
     }
 
