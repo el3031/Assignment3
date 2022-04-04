@@ -154,7 +154,7 @@ RectTransform:
   m_GameObject: {fileID: 7002335}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 3.65, z: 1}
   m_Children:
   - {fileID: 675226026}
   m_Father: {fileID: 1109309398}
@@ -162,7 +162,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: -277, y: 121}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &7002337
@@ -194,7 +194,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 3
+    m_Mode: 0
     m_WrapAround: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
@@ -672,7 +672,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 3
+    m_Mode: 0
     m_WrapAround: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
@@ -729,6 +729,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prefab: {fileID: 1562296066854876445, guid: 35abbdb6eae7446baaa0bca5beac55a6, type: 3}
   grid: {fileID: 846997299}
+  offset: 0.5
 --- !u!114 &40919618
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1110,6 +1111,7 @@ GameObject:
   - component: {fileID: 207695245}
   - component: {fileID: 207695244}
   - component: {fileID: 207695243}
+  - component: {fileID: 207695247}
   m_Layer: 7
   m_Name: LeftRayInteractor
   m_TagString: Untagged
@@ -1460,8 +1462,8 @@ MonoBehaviour:
   m_ModelSelectTransition: 
   m_ModelDeSelectTransition: 
   m_ControllerNode: 4
-  m_SelectUsage: 2
-  m_ActivateUsage: 3
+  m_SelectUsage: 3
+  m_ActivateUsage: 2
   m_UIPressUsage: 2
   m_AxisToPressThreshold: 0.1
   m_RotateAnchorLeft: 16
@@ -1469,6 +1471,20 @@ MonoBehaviour:
   m_MoveObjectIn: 14
   m_MoveObjectOut: 15
   m_PoseProvider: {fileID: 0}
+--- !u!114 &207695247
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 207695241}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b24ef85e47424fa2bfd310bebf79d3a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inputSource: 4
+  selectionTracker: {fileID: 1109309400}
 --- !u!1001 &210968644
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1659,7 +1675,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 3
+    m_Mode: 0
     m_WrapAround: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
@@ -1716,6 +1732,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prefab: {fileID: 3273329847540569097, guid: c65a3de847369412c96bf2606ab647c6, type: 3}
   grid: {fileID: 846997299}
+  offset: 0.5
 --- !u!114 &223974230
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3111,6 +3128,7 @@ GameObject:
   - component: {fileID: 541096550}
   - component: {fileID: 541096549}
   - component: {fileID: 541096548}
+  - component: {fileID: 541096551}
   m_Layer: 7
   m_Name: RightController
   m_TagString: Untagged
@@ -3264,8 +3282,8 @@ MonoBehaviour:
   m_ModelSelectTransition: 
   m_ModelDeSelectTransition: 
   m_ControllerNode: 5
-  m_SelectUsage: 2
-  m_ActivateUsage: 3
+  m_SelectUsage: 3
+  m_ActivateUsage: 2
   m_UIPressUsage: 2
   m_AxisToPressThreshold: 0.1
   m_RotateAnchorLeft: 16
@@ -3273,6 +3291,21 @@ MonoBehaviour:
   m_MoveObjectIn: 14
   m_MoveObjectOut: 15
   m_PoseProvider: {fileID: 0}
+--- !u!114 &541096551
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 541096545}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01b96adc02e7f4e698cbd59f291d13ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inputSource: 5
+  selectionTracker: {fileID: 1109309400}
+  grid: {fileID: 846997299}
 --- !u!4 &548882182 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8936203340495484538, guid: e291c29cde89c4e2dbfd259f16e0b365,
@@ -5965,6 +5998,7 @@ GameObject:
   - component: {fileID: 1109309395}
   - component: {fileID: 1109309399}
   - component: {fileID: 1109309400}
+  - component: {fileID: 1109309401}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -6089,6 +6123,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   selected: {fileID: 0}
+--- !u!114 &1109309401
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1109309394}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0fe95cf41799f4c54ada1347845c66c9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &1113108886 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8936203340495484538, guid: e291c29cde89c4e2dbfd259f16e0b365,
@@ -7756,7 +7802,7 @@ RectTransform:
   m_GameObject: {fileID: 1563460566}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.7037, y: 1.7037, z: 1.7037}
+  m_LocalScale: {x: 0.858735, y: 3.8166, z: 0}
   m_Children:
   - {fileID: 1637427903}
   m_Father: {fileID: 1109309398}
@@ -7793,7 +7839,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 3
+    m_Mode: 0
     m_WrapAround: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
@@ -8695,7 +8741,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1728657556
 Transform:
   m_ObjectHideFlags: 0
