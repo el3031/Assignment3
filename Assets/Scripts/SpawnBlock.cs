@@ -7,6 +7,7 @@ public class SpawnBlock : MonoBehaviour
     [SerializeField] private GameObject prefab;
     [SerializeField] private Transform grid;
     [SerializeField] private float offset;
+    [SerializeField] private UndoRedo undoRedo;
     
     // Start is called before the first frame update
     void Start()
@@ -28,6 +29,8 @@ public class SpawnBlock : MonoBehaviour
         spawnedBlock.transform.parent = grid;
         Debug.Log(spawnedBlock.transform.parent);
         spawnedBlock.transform.localScale = Vector3.one;
-
+        
+        MazeAction action = new MazeAction(true, false, false, spawnedBlock.transform.localPosition, spawnedBlock.transform.localRotation, prefab, spawnedBlock);
+        undoRedo.actions.Push(action);
     }
 }

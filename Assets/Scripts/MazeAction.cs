@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Action : MonoBehaviour
+public class MazeAction
 {
     public bool spawned;
     public bool deleted;
@@ -12,7 +12,7 @@ public class Action : MonoBehaviour
     public GameObject prefab;
     public GameObject gameObject;
     
-    public Action(bool s, bool d, bool t, Vector3 pLoc, Quaternion r, GameObject p, GameObject g)
+    public MazeAction(bool s, bool d, bool t, Vector3 pLoc, Quaternion r, GameObject p, GameObject g)
     {
         spawned = s;
         deleted = d;

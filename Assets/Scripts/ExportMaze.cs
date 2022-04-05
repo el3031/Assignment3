@@ -9,7 +9,7 @@ public class ExportMaze : MonoBehaviour
     private GameObject[] blocks;
     [SerializeField] private Dictionary<string, int> blockDictionary;
     [SerializeField] private GameObject[] blockArray;
-    [SerializeField] private string filepath;
+    [SerializeField] private string fileName;
     
     // Start is called before the first frame update
     async void Start()
@@ -26,6 +26,8 @@ public class ExportMaze : MonoBehaviour
     {
         blocks = GameObject.FindGameObjectsWithTag("Blocks");
         
+        string filepath = Application.persistentDataPath + fileName;
+        Debug.Log(filepath);
         using (StreamWriter sw = new StreamWriter(filepath))
         {
             foreach (GameObject block in blocks)
@@ -35,9 +37,10 @@ public class ExportMaze : MonoBehaviour
                 string[] nameSplit = block.name.Split('(');
                 string nameString = nameSplit[0];
                 int name = blockDictionary[nameString];
-                string line = name + "," + pos.x + "," + pos.y + ", " + pos.z + "," + rot.x + "," + rot.y + "," + rot.z;
+                string line = name + "," + pos.x + "," + pos.y + "," + pos.z + "," + rot.x + "," + rot.y + "," + rot.z;
                 sw.WriteLine(line);
-            }
+            } 
+            sw.Close();
         }
         
     }
